@@ -13,8 +13,9 @@
 	    <tbody>
 		    <tr *ngFor="let contacto of listaContactos; index as i">
 			    <th scope="row">{{ i + 1 }}</th>
-			    <td>				
-					<a routerLink="detalle-contacto/{{contacto.id}}">{{ contacto.id }}</a>
+			    <td>
+					<!--Recordar que hay que poner aqui ruta relativa si no concatenara con la que haya-->				
+					<a routerLink="/detalle-contacto/{{contacto.id}}">{{ contacto.id }}</a>
 			    </td>
 			    <td>{{ contacto.first_name }}</td>
 			    <td>{{ contacto.last_name }}</td>

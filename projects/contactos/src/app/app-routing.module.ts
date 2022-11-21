@@ -5,6 +5,7 @@ import { DetalleContactoComponent } from './detalle-contacto/detalle-contacto.co
 
 const routes: Routes = [
 
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'lista-contactos', component: ListaContactosComponent},
   {path: 'detalle-contacto/:id', component: DetalleContactoComponent}
 
