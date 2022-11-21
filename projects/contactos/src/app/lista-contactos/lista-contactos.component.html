@@ -14,7 +14,7 @@
 		    <tr *ngFor="let contacto of listaContactos; index as i">
 			    <th scope="row">{{ i + 1 }}</th>
 			    <td>				
-					<a (click)="seleccion(contacto)">{{ contacto.id }}</a>
+					<a routerLink="detalle-contacto/{{contacto.id}}">{{ contacto.id }}</a>
 			    </td>
 			    <td>{{ contacto.first_name }}</td>
 			    <td>{{ contacto.last_name }}</td>
@@ -28,5 +28,3 @@
 		</tfoot>
     </table>
 </div>
-<!--Añadimos el componente hijo-->
-<app-detalle-contacto [detalleContacto] = "contactoSeleccionado"></app-detalle-contacto>

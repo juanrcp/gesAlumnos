@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class DetalleContactoComponent implements OnInit {
 
-  @Input() detalleContacto?: Usuario; 
+  detalleContacto?: Usuario; 
 
   constructor(
     
@@ -27,10 +27,18 @@ export class DetalleContactoComponent implements OnInit {
   }
 
   //Este metodo no funciona
-  getContacto(): void {
-    
-    const id = Number(this.ruta.snapshot.paramMap.get('id'));
-    //this.detalleContacto = this.contactoServicio.getContacto(id);
+  getContacto(): void {  
+
+    this.ruta.paramMap.subscribe( params => {
+      let id = Number(params.get('id'));
+      this.contactoServicio.getContacto(id).subscribe(
+        (resp:any) => {
+          this.detalleContacto = resp.data;
+        }
+      )
+    }
+
+    )
     
   }
 }

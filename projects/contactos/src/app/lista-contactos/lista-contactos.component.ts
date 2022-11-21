@@ -10,7 +10,7 @@ import { ContactosService } from '../contactos.service';
 export class ListaContactosComponent implements OnInit {
 
   listaContactos : any [] = [];
-  contactoSeleccionado?: Usuario;
+  //contactoSeleccionado?: Usuario;
 
   constructor(private contactoServicio: ContactosService) { }
 
@@ -24,11 +24,6 @@ export class ListaContactosComponent implements OnInit {
       this.listaContactos.push(contac);        
     });
   });
-  }
-
-  //Metodo para inyectarlo por herencia
-  seleccion(usuario: Usuario): void{
-    this.contactoSeleccionado = usuario;
   }
 
 }

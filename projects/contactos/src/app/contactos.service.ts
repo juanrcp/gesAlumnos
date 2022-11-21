@@ -15,8 +15,9 @@ export class ContactosService {
     return this.http.get<any>('https://reqres.in/api/users?page=2');
   }
 
+  //PARA INCRUSTAR CON EL DOLAR HAY QUE USAR LA COMILLA INVERSA
   getContacto(id: number) : Observable<any>{
-    return this.http.get<any>('https://reqres.in/api/users/' + id);
+    return this.http.get<any>(`https://reqres.in/api/users/${id}`);
   }
   
 }
