@@ -26,7 +26,6 @@ export class DetalleContactoComponent implements OnInit {
     this.getContacto();
   }
 
-  //Este metodo no funciona
   getContacto(): void {  
 
     this.ruta.paramMap.subscribe( params => {
