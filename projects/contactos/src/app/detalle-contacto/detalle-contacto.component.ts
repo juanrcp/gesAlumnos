@@ -17,7 +17,8 @@ export class DetalleContactoComponent implements OnInit {
   constructor(
     
     private ruta: ActivatedRoute,
-    private contactoServicio: ContactosService
+    private contactoServicio: ContactosService,
+    private location: Location
     
     ) { }
 
@@ -39,5 +40,9 @@ export class DetalleContactoComponent implements OnInit {
 
     )
     
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

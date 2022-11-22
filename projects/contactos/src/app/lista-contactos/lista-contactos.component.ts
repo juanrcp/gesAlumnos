@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../../usuarios/src/app/interfaces/usuario';
 import { ContactosService } from '../contactos.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -10,9 +11,11 @@ import { ContactosService } from '../contactos.service';
 export class ListaContactosComponent implements OnInit {
 
   listaContactos : any [] = [];
-  //contactoSeleccionado?: Usuario;
 
-  constructor(private contactoServicio: ContactosService) { }
+  constructor(
+    private contactoServicio: ContactosService, 
+    private location: Location
+    ) { }
 
   ngOnInit(): void {
 
@@ -24,6 +27,10 @@ export class ListaContactosComponent implements OnInit {
       this.listaContactos.push(contac);        
     });
   });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

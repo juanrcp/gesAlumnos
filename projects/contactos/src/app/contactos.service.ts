@@ -42,7 +42,7 @@ export class ContactosService {
     return this.http.post<Usuario>('https://reqres.in/api/users', contacto)
     .pipe(
       catchError(this.handleError('nuevoContacto', contacto))
-    );;
+    );
   }
 
   //Update de contacto. El metodo nos pedira que quiere acturalizar y con que

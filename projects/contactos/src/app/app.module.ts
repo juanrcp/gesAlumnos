@@ -8,19 +8,23 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
 import { DetalleContactoComponent } from './detalle-contacto/detalle-contacto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaContactosComponent,
     DetalleContactoComponent,
-    MenuComponent
+    MenuComponent,
+    NuevoContactoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

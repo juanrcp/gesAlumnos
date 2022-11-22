@@ -1,8 +1,9 @@
-<div class="card" style="width: 18rem;" *ngIf="detalleContacto">
+<div class="card" style="width: 18rem; text-align: center" *ngIf="detalleContacto">
   <img class="card-img-top" src="{{detalleContacto.avatar}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{detalleContacto.first_name}} {{detalleContacto.last_name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">ID: {{detalleContacto.id}}</h6>
       <p class="card-text">email: {{detalleContacto.email}}</p>
     </div>
+    <button class="btn btn-primary" (click)="goBack()">VOLVER</button>
   </div>
