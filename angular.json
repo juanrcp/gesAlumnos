@@ -310,7 +310,9 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/contactos/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
