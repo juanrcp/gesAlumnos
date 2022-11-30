@@ -11,6 +11,14 @@ import { MenuComponent } from './menu/menu.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'projects/ges-alumnos/src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
