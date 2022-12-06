@@ -1,1 +1,27 @@
 <p>Campos del Formulario y 2 botones: unos para crear y otro para editar</p>
+<div class="container">
+    <form class="row g-3" [formGroup]="Formulario" (ngSubmit)="onSubmit()">
+        <div class="col-md-4">
+            <label for="idAlumno" class="form-label">ID:</label>
+            <input type="text" class="form-control" formControlName="idAlumno" value="" required>
+          </div>
+        <div class="col-md-4">
+          <label for="nombre" class="form-label">NOMBRE:</label>
+          <input type="text" class="form-control" formControlName="nombre" value="" required>
+        </div>
+        <div class="col-md-4">
+          <label for="apellidos" class="form-label">APELLIDOS:</label>
+          <input type="text" class="form-control" formControlName="apellidos" value="" required>
+        </div>
+        <div class="col-md-4">
+          <label for="curso" class="form-label">CURSO:</label>
+          <input type="text" class="form-control" formControlName="curso" value="" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">GUARDAR</button>
+        </div>
+      </form>
+      <br>
+      <button class="btn btn-primary" (click)="goBack()">VOLVER</button>
+      <button style="margin-left: 5%;" class="btn btn-warning" (click)="borrar()">BORRAR</button>
+</div>

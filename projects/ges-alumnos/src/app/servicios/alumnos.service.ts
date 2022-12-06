@@ -29,13 +29,13 @@ export class AlumnosService {
   }
 
   //Nuevo Alumno
-  newAlumno(alumno: Alumnos){
+  newAlumno(alumno: any){
     return this.firebase.collection(this.miColeccion).add(alumno);
   }
 
   //Actualiza Alumno: de la coleccion coge el alumno con el documento ID 
   //y actualizalo con el nuevo alumno
-  updateAlumno(documentId: string, alumno: Alumnos){
+  updateAlumno(documentId: string, alumno: any){
     return this.firebase.collection(this.miColeccion).doc(documentId).update(alumno);
   }
 
