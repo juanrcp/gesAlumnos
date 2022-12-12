@@ -5,6 +5,7 @@ import { FormAlumnosComponent } from './vistas/form-alumnos/form-alumnos.compone
 
 const routes: Routes = [
   {path: '', component: ListaAlumnosComponent},
+  {path: 'alumno/:curso', component: ListaAlumnosComponent},
   {path: 'edit-Alumno/:documentId', component: FormAlumnosComponent},
   {path: 'creaAlumno', component: FormAlumnosComponent}
 ];

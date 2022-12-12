@@ -43,4 +43,9 @@ export class AlumnosService {
   delete(documentId: string){
     return this.firebase.collection(this.miColeccion).doc(documentId).delete();
   }
+
+  //Filtrar por curso. El filtro nos ayuda firebase
+  getCurso(curso: string){
+    return this.firebase.collection(this.miColeccion, ref => ref.where('curso', '==', curso)).snapshotChanges();
+  }
 }

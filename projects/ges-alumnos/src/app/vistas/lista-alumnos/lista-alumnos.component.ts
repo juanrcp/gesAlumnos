@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnosService } from '../../servicios/alumnos.service';
+import { ActivatedRoute } from '@angular/router';
+import { Alumnos } from '../../interfaces/alumnos';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -12,10 +14,18 @@ export class ListaAlumnosComponent implements OnInit {
 
   constructor(
     private alumnosServicio: AlumnosService,
+    private ruta: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    this.getAllAlumnos();
+    //Si especificamos algo en la URL lo filtrara si no presenta todo
+    if(this.ruta.snapshot.paramMap.get('curso')){
+      this.getClase(this.ruta.snapshot.paramMap.get('curso')!);
+
+    }else{
+      this.getAllAlumnos();
+
+    }
   }
 
   getAllAlumnos(){
@@ -35,4 +45,21 @@ export class ListaAlumnosComponent implements OnInit {
       });
     });
   } 
+
+  //Obtenemos las clases ya filtradas
+  getClase(curso: string){
+    this.alumnosServicio.getCurso(curso).subscribe((alumnosSnapshot: any) => {
+      this.alumnos = [];
+      alumnosSnapshot.forEach((alumnosData: any) =>{
+        console.log(alumnosData);
+        this.alumnos.push({
+
+          id: alumnosData.payload.doc.id,
+
+          data: alumnosData.payload.doc.data()
+        })
+
+      });
+    });
+  }
 }
